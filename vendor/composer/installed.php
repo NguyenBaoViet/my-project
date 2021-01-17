@@ -1,12 +1,12 @@
 <?php return array (
   'root' => 
   array (
-    'pretty_version' => 'v5.8.35',
-    'version' => '5.8.35.0',
+    'pretty_version' => 'dev-main',
+    'version' => 'dev-main',
     'aliases' => 
     array (
     ),
-    'reference' => NULL,
+    'reference' => '9db69f562cd6cb3e93f777fa2fbd8e7c4013d40d',
     'name' => 'laravel/laravel',
   ),
   'versions' => 
@@ -123,6 +123,15 @@
       array (
       ),
       'reference' => 'fc10d778e4b84d5bd315dad194661e091d307c6f',
+    ),
+    'guzzlehttp/psr7' => 
+    array (
+      'pretty_version' => '1.7.0',
+      'version' => '1.7.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '53330f47520498c0ae1f61f7e2c90f55690c06a3',
     ),
     'hamcrest/hamcrest-php' => 
     array (
@@ -329,6 +338,15 @@
         0 => 'v5.8.38',
       ),
     ),
+    'intervention/image' => 
+    array (
+      'pretty_version' => '2.5.1',
+      'version' => '2.5.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'abbf18d5ab8367f96b3205ca3c89fb2fa598c69e',
+    ),
     'jakub-onderka/php-console-color' => 
     array (
       'pretty_version' => 'v0.2',
@@ -365,12 +383,12 @@
     ),
     'laravel/laravel' => 
     array (
-      'pretty_version' => 'v5.8.35',
-      'version' => '5.8.35.0',
+      'pretty_version' => 'dev-main',
+      'version' => 'dev-main',
       'aliases' => 
       array (
       ),
-      'reference' => NULL,
+      'reference' => '9db69f562cd6cb3e93f777fa2fbd8e7c4013d40d',
     ),
     'laravel/tinker' => 
     array (
@@ -608,6 +626,22 @@
         0 => '1.0',
       ),
     ),
+    'psr/http-message' => 
+    array (
+      'pretty_version' => '1.0.1',
+      'version' => '1.0.1.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'f6561bf28d520154e4b0ec72be95418abe6d9363',
+    ),
+    'psr/http-message-implementation' => 
+    array (
+      'provided' => 
+      array (
+        0 => '1.0',
+      ),
+    ),
     'psr/log' => 
     array (
       'pretty_version' => '1.1.3',
@@ -621,8 +655,8 @@
     array (
       'provided' => 
       array (
-        0 => '1.0',
-        1 => '1.0.0',
+        0 => '1.0.0',
+        1 => '1.0',
       ),
     ),
     'psr/simple-cache' => 
@@ -642,6 +676,15 @@
       array (
       ),
       'reference' => '90da7f37568aee36b116a030c5f99c915267edd4',
+    ),
+    'ralouphie/getallheaders' => 
+    array (
+      'pretty_version' => '3.0.3',
+      'version' => '3.0.3.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '120b605dfeb996808c31b6477290a714d356e822',
     ),
     'ramsey/uuid' => 
     array (
@@ -1023,6 +1066,15 @@
       array (
       ),
       'reference' => 'b43b05cf43c1b6d849478965062b6ef73e223bb5',
+    ),
+    'unisharp/laravel-filemanager' => 
+    array (
+      'pretty_version' => 'v2.2.0',
+      'version' => '2.2.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '34202590a88ecfc598c6dc70dae8b306710d4df2',
     ),
     'vlucas/phpdotenv' => 
     array (
