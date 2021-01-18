@@ -11,6 +11,7 @@ use App\ProductTag;
 use App\Components\Recusive;
 use Illuminate\Support\Facades\Storage;
 use App\Traits\StorageImageTrait;
+use App\Traits\DeleteModelTrait;
 use App\Http\Requests\ProductAddRequest;
 use DB;
 use Log;
@@ -18,6 +19,7 @@ use Log;
 class AdminProductController extends Controller
 {
     use StorageImageTrait;
+    use DeleteModelTrait;
     private $category;
     private $product;
     private $productImage;
@@ -166,18 +168,6 @@ class AdminProductController extends Controller
     }
 
     public function delete($id){
-        try {
-            $this->product->find($id)->delete();
-            return response()->json([
-                'code' => 200,
-                'message' => 'success'
-            ],200);
-        } catch (\Exception $e) {
-            Log::error('Message: '. $e->getMessage()  .' ---Line: '. $e->getLine(). ' ---File: '.$e->getFile());
-            return response()->json([
-                'code' => 500,
-                'message' => 'fail'
-            ],500);
-        }
+        return $this->deleteModelTrait($id, $this->product);
     }
 }

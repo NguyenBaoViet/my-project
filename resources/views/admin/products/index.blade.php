@@ -66,5 +66,5 @@
 
 @section('js')
     <script src="{{ asset('js/sweetalert2@10.js') }}"></script>
-    <script src="{{ asset('adm1/product/index.js') }}"></script>
+    <script src="{{ asset('js/main.js') }}"></script>
 @endsection

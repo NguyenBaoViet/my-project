@@ -48,6 +48,12 @@
               <p>Slider</p>
             </a>
           </li>
+          <li class="nav-item">
+            <a href="{{route('settings.index')}}" class="nav-link">
+              <i class="nav-icon fas fa-th"></i>
+              <p>Setting</p>
+            </a>
+          </li>
         </ul>
       </nav>
       <!-- /.sidebar-menu -->
