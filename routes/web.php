@@ -19,118 +19,6 @@ Route::get('/home', function () {
 });
 
 Route::prefix('adm')->group(function () {
-    //Category
-    Route::prefix('categories')->group(function () {
-        Route::get('/',[
-            'as' => 'category.index',
-            'uses' => 'CategoryController@index'
-        ]);
-        Route::get('/create',[
-            'as' => 'category.create',
-            'uses' => 'CategoryController@create'
-        ]);
-        Route::post('/store',[
-            'as' => 'category.store',
-            'uses' => 'CategoryController@store'
-        ]);
-        Route::get('/edit/{id}',[
-            'as' => 'category.edit',
-            'uses' => 'CategoryController@edit'
-        ]);
-        Route::post('/update/{id}',[
-            'as' => 'category.update',
-            'uses' => 'CategoryController@update'
-        ]);
-        Route::get('/delete/{id}',[
-            'as' => 'category.delete',
-            'uses' => 'CategoryController@delete'
-        ]);
-    });
-
-    //Menu
-    Route::prefix('menus')->group(function () {
-        Route::get('/',[
-            'as' => 'menus.index',
-            'uses' => 'MenuController@index'
-        ]);
-        Route::get('/create',[
-            'as' => 'menus.create',
-            'uses' => 'MenuController@create'
-        ]);
-        Route::post('/store',[
-            'as' => 'menus.store',
-            'uses' => 'MenuController@store'
-        ]);
-        Route::get('/edit/{id}',[
-            'as' => 'menus.edit',
-            'uses' => 'MenuController@edit'
-        ]);
-        Route::post('/update/{id}',[
-            'as' => 'menus.update',
-            'uses' => 'MenuController@update'
-        ]);
-        Route::get('/delete/{id}',[
-            'as' => 'menus.delete',
-            'uses' => 'MenuController@delete'
-        ]);
-    });
-
-    //Product
-    Route::prefix('products')->group(function () {
-        Route::get('/',[
-            'as' => 'products.index',
-            'uses' => 'AdminProductController@index'
-        ]);
-        Route::get('/create',[
-            'as' => 'products.create',
-            'uses' => 'AdminProductController@create'
-        ]);
-        Route::post('/store',[
-            'as' => 'products.store',
-            'uses' => 'AdminProductController@store'
-        ]);
-        Route::get('/edit/{id}',[
-            'as' => 'products.edit',
-            'uses' => 'AdminProductController@edit'
-        ]);
-        Route::post('/update/{id}',[
-            'as' => 'products.update',
-            'uses' => 'AdminProductController@update'
-        ]);
-        Route::get('/delete/{id}',[
-            'as' => 'products.delete',
-            'uses' => 'AdminProductController@delete'
-        ]);
-    });
-
-    //Slider
-    Route::prefix('sliders')->group(function () {
-        Route::get('/',[
-            'as' => 'sliders.index',
-            'uses' => 'AdminSliderController@index'
-        ]);
-        Route::get('/create',[
-            'as' => 'sliders.create',
-            'uses' => 'AdminSliderController@create'
-        ]);
-        Route::post('/store',[
-            'as' => 'sliders.store',
-            'uses' => 'AdminSliderController@store'
-        ]);
-        Route::get('/edit/{id}',[
-            'as' => 'sliders.edit',
-            'uses' => 'AdminSliderController@edit'
-        ]);
-        Route::post('/update/{id}',[
-            'as' => 'sliders.update',
-            'uses' => 'AdminSliderController@update'
-        ]);
-        Route::get('/delete/{id}',[
-            'as' => 'sliders.delete',
-            'uses' => 'AdminSliderController@delete'
-        ]);
-    });
-
     //Setting
     Route::prefix('settings')->group(function () {
         Route::get('/',[
@@ -156,6 +44,74 @@ Route::prefix('adm')->group(function () {
         Route::get('/delete/{id}',[
             'as' => 'settings.delete',
             'uses' => 'AdminSettingController@delete'
+        ]);
+    });
+
+    //User
+    Route::prefix('users')->group(function () {
+        Route::get('/',[
+            'as' => 'users.index',
+            'uses' => 'AdminUserController@index'
+        ]);
+        Route::get('/create',[
+            'as' => 'users.create',
+            'uses' => 'AdminUserController@create'
+        ]);
+        Route::post('/store',[
+            'as' => 'users.store',
+            'uses' => 'AdminUserController@store'
+        ]);
+        Route::get('/edit/{id}',[
+            'as' => 'users.edit',
+            'uses' => 'AdminUserController@edit'
+        ]);
+        Route::post('/update/{id}',[
+            'as' => 'users.update',
+            'uses' => 'AdminUserController@update'
+        ]);
+        Route::get('/delete/{id}',[
+            'as' => 'users.delete',
+            'uses' => 'AdminUserController@delete'
+        ]);
+    });
+
+    //Role
+    Route::prefix('roles')->group(function () {
+        Route::get('/',[
+            'as' => 'roles.index',
+            'uses' => 'AdminRoleController@index'
+        ]);
+        Route::get('/create',[
+            'as' => 'roles.create',
+            'uses' => 'AdminRoleController@create'
+        ]);
+        Route::post('/store',[
+            'as' => 'roles.store',
+            'uses' => 'AdminRoleController@store'
+        ]);
+        Route::get('/edit/{id}',[
+            'as' => 'roles.edit',
+            'uses' => 'AdminRoleController@edit'
+        ]);
+        Route::post('/update/{id}',[
+            'as' => 'roles.update',
+            'uses' => 'AdminRoleController@update'
+        ]);
+        Route::get('/delete/{id}',[
+            'as' => 'roles.delete',
+            'uses' => 'AdminRoleController@delete'
+        ]);
+    });
+
+    //Permission
+    Route::prefix('permissions')->group(function () {
+        Route::get('/create',[
+            'as' => 'permissions.create',
+            'uses' => 'AdminPermissionController@create'
+        ]);
+        Route::post('/store',[
+            'as' => 'permissions.store',
+            'uses' => 'AdminPermissionController@store'
         ]);
     });
 });

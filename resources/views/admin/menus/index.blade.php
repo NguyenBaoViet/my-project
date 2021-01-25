@@ -21,7 +21,9 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <a href="{{ route('menus.create') }}" class="btn btn-success float-right m-2">Add</a> 
+                    @can('add-menu')
+                        <a href="{{ route('menus.create') }}" class="btn btn-success float-right m-2">Add</a> 
+                    @endcan
                 </div>
                 <div class="col-md-12">
                     <table class="table">
@@ -38,10 +40,14 @@
                             <th scope="row">{{ $value->id }}</th>
                             <td>{{ $value->name }}</td>
                             <td>
-                                <a href="{{ route('menus.edit',['id' => $value->id] )}}" class="btn btn-default">Edit</a>
-                                <a href="{{ route('menus.delete', ['id' => $value->id] )}}" 
-                                    data-url = "{{ route('menus.delete', ['id' => $value->id] )}}"
-                                    class="btn btn-danger action_delete">Delete</a>
+                                @can('edit-menu')
+                                    <a href="{{ route('menus.edit',['id' => $value->id] )}}" class="btn btn-default">Edit</a>
+                                @endcan
+                                @can('delete-menu')
+                                    <a href="{{ route('menus.delete', ['id' => $value->id] )}}" 
+                                        data-url = "{{ route('menus.delete', ['id' => $value->id] )}}"
+                                        class="btn btn-danger action_delete">Delete</a>
+                                @endcan
                             </td>
                             </tr>
                         @endforeach

@@ -5,10 +5,14 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Role;
 
 class User extends Authenticatable
 {
     use Notifiable;
+    protected $guarded = []; 
+    use SoftDeletes;
 
     /**
      * The attributes that are mass assignable.
@@ -36,4 +40,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function role() {
+        return $this->belongsToMany(Role::class,'role_user','user_id','role_id');
+    }
+
+    public function checkpermissionAccess($permissionCheck) {
+        $roles = auth()->user()->role;
+        foreach($roles as $role) {
+            $permission = $role->permissions;
+            if ($permission->contains('key_code',$permissionCheck)) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
